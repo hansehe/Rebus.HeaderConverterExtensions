@@ -47,3 +47,7 @@ __pycache__/
 .idea/
 
 private.env
+docker-compose.build.*.yml
+docker-compose.run.*.yml
+docker-compose.test.*.yml
+docker-compose.publish.*.yml

@@ -12,8 +12,8 @@
 
         <RepositoryType>git</RepositoryType> 
         <RepositoryUrl>https://github.com/hansehe/Rebus.HeaderConverterExtensions</RepositoryUrl> 
-        <PackageIconUrl>https://github.com/hansehe/Rebus/raw/master/src/icons/little_rebusbus_200x200.png</PackageIconUrl>
-        <Description>An extension library to [Rebus](https://github.com/rebus-org/Rebus) to convert Rebus headers to/from a set of standardized headers. It will allow non-Rebus implementations, and other non-dotnet code, interact with Rebus.</Description>
+        <PackageIconUrl>https://github.com/hansehe/Rebus.HeaderConverterExtensions/raw/master/src/icons/little_rebusbus_200x200.png</PackageIconUrl>
+        <Description>An extension library to Rebus (https://github.com/rebus-org/Rebus) to convert Rebus headers to/from a set of standardized headers. It will allow non-Rebus implementations, and other non-dotnet code, interact with Rebus.</Description>
         <PackageTags>rebus,headers,extension</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup> 
