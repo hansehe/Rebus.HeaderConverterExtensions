@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  dotnet-nuget:
+    image: dotnet.nuget
+    container_name: dotnet.nuget
+    build:
+      context: .
+      dockerfile: Dockerfile_BuildNuget
+      args:
+        - VERSION=${VERSION}
+        - SOLUTION_FOLDER=${SOLUTION_FOLDER}

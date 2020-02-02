@@ -1,0 +1,25 @@
+version: '3'
+
+services:  
+  dotnet-example:
+    image: dotnet-example
+    container_name: dotnet-example
+    build:
+      context: .
+      dockerfile: Rebus.HeaderConverterExtensions/Example/Example.Rebus.RabbitMqWithStandardHeaders/Dockerfile
+    networks:
+      - backend_network
+
+  py_rabbitmq_publisher:
+    image: py_rabbitmq_publisher
+    build:
+      context: ./Rebus.HeaderConverterExtensions/Example/PythonRabbitMqPublisher/
+      dockerfile: Dockerfile
+    environment:
+      - SEND_EXIT_MESSAGE=true
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+    external: true

@@ -1,0 +1,63 @@
+env_files:
+    - src/private.env
+    - src/.env
+
+changelog:
+    file: CHANGELOG.md
+    envKey: VERSION
+
+build:
+    selections:
+        dotnet:
+            directory: src
+            files:
+                - docker-compose.nuget.build.yml
+        example:
+            directory: src
+            files:
+                - docker-compose.yml
+
+run:
+    selections:
+        dotnet:
+            directory: src
+            copyFromContainer:
+                dotnet.nuget:
+                    containerSrc: src/nuget/
+                    hostDest: output
+            files:
+                - docker-compose.nuget.build.yml
+        example:
+            directory: src
+            abortOnContainerExit: false
+            files:
+                - docker-compose.yml
+
+test:
+    selections:
+        dotnet:
+            directory: src
+            files:
+                - docker-compose.tests.yml
+        example:
+            directory: src
+            containerNames:
+                - dotnet-example
+            files:
+                - docker-compose.yml
+
+publish:
+    selections:
+        dotnet:
+            directory: src
+            containerArtifact: false
+            files:
+                - docker-compose.nuget.publish.yml
+
+
+swarm:
+    selections:
+        dotnet:
+            directory: ServiceDependencies
+            files:
+                - swarm-management.yml

@@ -1,0 +1,16 @@
+version: '3'
+
+services:  
+  dotnet-tests:
+    image: dotnet.tests
+    build:
+      context: .
+      dockerfile: Dockerfile_Test
+      args:
+        - TEST_FOLDER=${TEST_FOLDER}
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+    external: true
